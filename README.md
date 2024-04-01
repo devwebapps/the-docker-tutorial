@@ -1,4 +1,4 @@
-# the-docker-tutorial
+# The Docker Tutorial
 
 I found this interesting tutorial on Laracasts. It's by Andrew Schmelyun.
 
@@ -23,4 +23,31 @@ or delete it using the delete icon in the Docker desktop application.
 To get version information about the pulled container just use the following command:
 ```
 docker run --rm ubuntu:latest cat /etc/os-release
+```
+
+### Episode 2 - Create a Simple Docker File
+
+First we create a custom Dockerfile:
+```
+touch Dockerfile
+code Dockerfile
+```
+The aim of this file is to provide us a set of instructions for docker to use that builds and prepares our container when we use docker run.<br>
+Lets think of something we can do with this container. How about to create a container for a [JSON Server](https://www.npmjs.com/package/json-server).<br>
+
+The first thing that has to be included in every Dockerfile is the "FROM" command:
+```
+FROM node:latest
+```
+This is followed by the base image that you want to build your container.<br>
+
+Next we use the "WORKDIR" command to determine in what directory we are going to be in when we run any following commands:
+```
+WORKDIR /home/server
+```
+If the directory isnt available it will be created.<br>
+
+To execute instructions like installing a npm package we can use the "RUN" command:
+```
+RUN npm install -g json-server
 ```
