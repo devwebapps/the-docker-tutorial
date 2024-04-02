@@ -76,3 +76,25 @@ with the following example data:
   }
 }
 ```
+In order to be able to use the data file in our Docker container we can use the "COPY" command to copy the file into the container:
+```
+COPY db.json /home/server/db.json
+```
+
+The last thing we need to do is tell Docker to actually run json-server. There are two ways to do it:
+1. "ENTRYPOINT"
+2. "CMD"
+
+"ENTRYPOINT" is the main command ran by the Docker container. It can not be overwritten by commands on the host machine instead commands are added to it.<br>
+
+"CMD" is for additional commands or options that will run after the "ENTRYPOINT" command.<br>
+
+For now we use the "ENTRYPOINT" command:
+```
+ENTRYPOINT ["json-server", "db.json"]
+```
+There is also the alternative shell form:
+```
+ENTRYPOINT /bin/sh -c json-server db.json
+```
+But we use the exact form as array notation above.
