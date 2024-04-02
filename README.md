@@ -97,4 +97,13 @@ There is also the alternative shell form:
 ```
 ENTRYPOINT /bin/sh -c json-server db.json
 ```
-But we use the exact form as array notation above.
+But we use the exact form as array notation above.<br>
+
+Now its time to build the container:
+```
+docker build .
+```
+After the Docker container has been created, we can display the docker images with:
+```
+docker image list
+```
