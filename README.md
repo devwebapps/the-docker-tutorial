@@ -51,3 +51,28 @@ To execute instructions like installing a npm package we can use the "RUN" comma
 ```
 RUN npm install -g json-server
 ```
+For the JSON Server we need a file for its data:
+```
+touch db.json
+code db.json
+```
+with the following example data:
+```
+{
+  "posts": [
+    {
+      "title": "My first Post",
+      "author": "web devapps"
+    },
+    {
+      "title": "My second Post",
+      "author": "web devapps"
+    }
+  ],
+  "profile": {
+    "first_name": "Web",
+    "last_name": "Devapps",
+    "email": "ich@webdevapps.de"
+  }
+}
+```
