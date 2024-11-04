@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "title": "My first Post",
+      "author": "web devapps"
+    },
+    {
+      "title": "My second Post",
+      "author": "web devapps"
+    }
+  ],
+  "profile": {
+    "first_name": "Web",
+    "last_name": "Devapps",
+    "email": "ich@webdevapps.de"
+  }
+}
